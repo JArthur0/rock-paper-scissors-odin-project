@@ -1,5 +1,3 @@
-let humanScore=0;
-let computerScore=0;
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
     let pick = "";
@@ -21,8 +19,7 @@ function getComputerChoice() {
     return pick;
 }
 function getHumanChoice(){
-    let pick = prompt("ROCK, PAPER or SCISSORS");
-    pick.toUpperCase
+    let pick = prompt("ROCK, PAPER or SCISSORS").toUpperCase();
     switch (pick) {
         case "ROCK":
             pick = "ROCK"
@@ -41,21 +38,41 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice,computerChoice){
+    let result = 0;
     if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
         console.log("YOU WIN");
+        return result = 1;
     }
     else if(humanChoice === "PAPER" && computerChoice === "ROCK"){
         console.log("YOU WIN");
+        return result = 1;
     }
     else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         console.log("YOU WIN")
+        return result = 1;
     }
     else{
         console.log("YOU LOSE")
     }
 }
 
-const humanSelection=getHumanChoice();
-const computerSelection=getComputerChoice();
+function playGame(){
+    let humanScore=0;
+    let computerScore=0;
+    for(let i =0;i<4;i++){
+        const humanSelection=getHumanChoice();
+        const computerSelection=getComputerChoice();
+        let round = playRound(humanSelection,computerSelection);
 
-playRound(humanSelection,computerSelection);
+        if(round == true){
+            humanScore++;
+        }
+        else{
+            computerScore++;
+        }
+        console.log(humanScore);
+        console.log(computerScore);
+    }
+}
+
+playGame();
