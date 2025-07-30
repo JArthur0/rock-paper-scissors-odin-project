@@ -1,38 +1,61 @@
+let humanScore=0;
+let computerScore=0;
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
     let pick = "";
     switch (choice) {
         
         case 1:
-            console.log("ROCK");
             pick = "ROCK"
             break;
         case 2:
-            console.log("PAPER");
             pick = "PAPER"
             break;
         case 3:
-           console.log("SCISSORS");
            pick = "SCISSORS" 
            break;
         default:
             break;
     }
+    console.log("THE COMPUTER CHOSE "+pick)
     return pick;
 }
-function getHumanChoice(choice){
-
-    switch (choice) {
+function getHumanChoice(){
+    let pick = prompt("ROCK, PAPER or SCISSORS");
+    pick.toUpperCase
+    switch (pick) {
         case "ROCK":
-            return "ROCK";  
+            pick = "ROCK"
+            break;  
         case "PAPER":
-            return "PAPER"
+            pick = "PAPER"
+            break; 
         case "SCISSORS":
-            return "SCISSORS"
+           pick = "SCISSORS"
+            break; 
         default:
             break;
     }
+    console.log("YOU CHOSE "+pick)
+    return pick;
 }
 
-getHumanChoice(prompt("ROCK, PAPER or SCISSORS"))
-getComputerChoice();
+function playRound(humanChoice,computerChoice){
+    if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
+        console.log("YOU WIN");
+    }
+    else if(humanChoice === "PAPER" && computerChoice === "ROCK"){
+        console.log("YOU WIN");
+    }
+    else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
+        console.log("YOU WIN")
+    }
+    else{
+        console.log("YOU LOSE")
+    }
+}
+
+const humanSelection=getHumanChoice();
+const computerSelection=getComputerChoice();
+
+playRound(humanSelection,computerSelection);
