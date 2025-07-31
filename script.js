@@ -40,26 +40,21 @@ function getHumanChoice(){
 function playRound(humanChoice,computerChoice){
     let result = 0;
     if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
-        console.log("YOU WIN");
         return result = 1;
     }
     else if(humanChoice === "PAPER" && computerChoice === "ROCK"){
-        console.log("YOU WIN");
         return result = 1;
     }
     else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
-        console.log("YOU WIN")
         return result = 1;
     }
-    else{
-        console.log("YOU LOSE")
-    }
+    
 }
 
 function playGame(){
     let humanScore=0;
     let computerScore=0;
-    for(let i =0;i<4;i++){
+    for(let i =0;i<5;i++){
         const humanSelection=getHumanChoice();
         const computerSelection=getComputerChoice();
         let round = playRound(humanSelection,computerSelection);
@@ -70,9 +65,15 @@ function playGame(){
         else{
             computerScore++;
         }
-        console.log(humanScore);
-        console.log(computerScore);
+
+        console.log("Your points: "+humanScore);
+        console.log("Computer points: "+computerScore);
+        
     }
+
+    if(humanScore>computerScore) console.log("YOU WON THE GAME");
+    else if(humanScore==computerScore) console.log("IT'S A TIE");
+    else console.log("YOU LOST THE GAME");
 }
 
 playGame();
