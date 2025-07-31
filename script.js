@@ -48,7 +48,9 @@ function playRound(humanChoice,computerChoice){
     else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         return result = 1;
     }
-    
+    else if(humanChoice === computerChoice){
+	return result = 2;
+    }
 }
 
 function playGame(){
@@ -62,10 +64,11 @@ function playGame(){
         if(round == true){
             humanScore++;
         }
-        else{
+	else if(round == 2){
+	}
+	else{
             computerScore++;
         }
-
         console.log("Your points: "+humanScore);
         console.log("Computer points: "+computerScore);
         
