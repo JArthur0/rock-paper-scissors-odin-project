@@ -49,9 +49,14 @@ function playRound(humanChoice,computerChoice){
         return result = 1;
     }
     else if(humanChoice === computerChoice){
+<<<<<<< HEAD
         return result = 2
     }
     
+=======
+	return result = 2;
+    }
+>>>>>>> 79d76745cebcc0518d3a15572de5a45e3521ed15
 }
 
 function playGame(){
@@ -65,14 +70,19 @@ function playGame(){
         if(round === 1){
             humanScore++;
         }
+<<<<<<< HEAD
         else if(round === 2){
             humanScore = humanScore;
             computerScore = computerScore;
         }
         else{
+=======
+	else if(round == 2){
+	}
+	else{
+>>>>>>> 79d76745cebcc0518d3a15572de5a45e3521ed15
             computerScore++;
         }
-
         console.log("Your points: "+humanScore);
         console.log("Computer points: "+computerScore);
         
