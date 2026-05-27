@@ -48,6 +48,9 @@ function playRound(humanChoice,computerChoice){
     else if(humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         return result = 1;
     }
+    else if(humanChoice === computerChoice){
+        return result = 2
+    }
     
 }
 
@@ -59,8 +62,12 @@ function playGame(){
         const computerSelection=getComputerChoice();
         let round = playRound(humanSelection,computerSelection);
 
-        if(round == true){
+        if(round === 1){
             humanScore++;
+        }
+        else if(round === 2){
+            humanScore = humanScore;
+            computerScore = computerScore;
         }
         else{
             computerScore++;
